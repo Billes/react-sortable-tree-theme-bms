@@ -122,7 +122,7 @@ class FileThemeNodeContentRenderer extends Component {
         >
           {/* Set the row preview to be used during drag and drop */}
           {connectDragPreview(
-            <div style={{ display: 'flex' }}>
+            <div style={{ display: 'flex', height: '100%' }}>
               {scaffold}
               <div
                 className={

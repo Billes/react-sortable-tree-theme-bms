@@ -1,14 +1,17 @@
 .rowWrapper {
   height: 100%;
   box-sizing: border-box;
-  cursor: move;
+  cursor: pointer;
+  font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 13px;
 
   &:hover {
-    opacity: 0.7;
+    color: #009ee3;
   }
 
   &:active {
-    opacity: 1;
+    color: #009ee3;
+    opacity: 0.7;
   }
 }
 
@@ -110,7 +113,6 @@
 
 .collapseButton,
 .expandButton {
-  appearance: none;
   border: none;
   background: transparent;
   padding: 0;

@@ -13,25 +13,28 @@ class App extends Component {
       searchFoundCount: null,
       treeData: [
         {
-          title: 'Incoming Files'
+          title: 'Incoming Files',
         },
         {
           title: 'Encyclopedia',
           children: [
-            {title:'Culture', children: [{title:'Art'},{title:'Craft'}]},
-            {title:'Science'},
-          ]
+            {
+              title: 'Culture',
+              children: [{ title: 'Art' }, { title: 'Craft' }],
+            },
+            { title: 'Science' },
+          ],
         },
         {
           title: 'Retail',
           children: [
             { title: 'Node 01' },
             { title: 'Node 02' },
-            { title: 'Node 03', children: [{title:'Subnode 01'}] },
+            { title: 'Node 03', children: [{ title: 'Subnode 01' }] },
             { title: 'Node 04' },
             { title: 'Node 05' },
           ],
-        }
+        },
       ],
     }
 
@@ -68,19 +71,6 @@ class App extends Component {
       searchFocusIndex,
       searchFoundCount,
     } = this.state
-
-    const alertNodeInfo = ({ node, path, treeIndex }) => {
-      const objectString = Object.keys(node)
-        .map(k => (k === 'children' ? 'children: Array' : `${k}: '${node[k]}'`))
-        .join(',\n   ')
-
-      global.alert(
-        'Info passed to the icon and button generators:\n\n' +
-          `node: {\n   ${objectString}\n},\n` +
-          `path: [${path.join(', ')}],\n` +
-          `treeIndex: ${treeIndex}`
-      )
-    }
 
     const selectPrevMatch = () =>
       this.setState({
@@ -150,7 +140,7 @@ class App extends Component {
           </form>
         </div>
 
-        <div style={{ flex: '1 0 50%', padding: '0 0 0 15px' }}>
+        <div style={{ flex: '1 0 50%', padding: '15px 0 0 15px' }}>
           <SortableTree
             theme={FileExplorerTheme}
             treeData={treeData}
@@ -166,25 +156,6 @@ class App extends Component {
             }
             canDrag={({ node }) => !node.dragDisabled}
             canDrop={({ nextParent }) => !nextParent || nextParent.isDirectory}
-            generateNodeProps={rowInfo => ({
-              buttons: [
-                <button
-                  style={{
-                    padding: 0,
-                    borderRadius: '100%',
-                    backgroundColor: 'gray',
-                    color: 'white',
-                    width: 16,
-                    height: 16,
-                    border: 0,
-                    fontWeight: 100,
-                  }}
-                  onClick={() => alertNodeInfo(rowInfo)}
-                >
-                  i
-                </button>,
-              ],
-            })}
           />
         </div>
       </div>
