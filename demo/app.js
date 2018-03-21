@@ -12,41 +12,26 @@ class App extends Component {
       searchFocusIndex: 0,
       searchFoundCount: null,
       treeData: [
-        { title: '.gitignore' },
-        { title: 'package.json' },
         {
-          title: 'src',
-          isDirectory: true,
-          expanded: true,
+          title: 'Incoming Files'
+        },
+        {
+          title: 'Encyclopedia',
           children: [
-            { title: 'styles.css' },
-            { title: 'index.js' },
-            { title: 'reducers.js' },
-            { title: 'actions.js' },
-            { title: 'utils.js' },
-          ],
+            {title:'Culture', children: [{title:'Art'},{title:'Craft'}]},
+            {title:'Science'},
+          ]
         },
         {
-          title: 'tmp',
-          isDirectory: true,
+          title: 'Retail',
           children: [
-            { title: '12214124-log' },
-            { title: 'drag-disabled-file', dragDisabled: true },
+            { title: 'Node 01' },
+            { title: 'Node 02' },
+            { title: 'Node 03', children: [{title:'Subnode 01'}] },
+            { title: 'Node 04' },
+            { title: 'Node 05' },
           ],
-        },
-        {
-          title: 'build',
-          isDirectory: true,
-          children: [{ title: 'react-sortable-tree.js' }],
-        },
-        {
-          title: 'public',
-          isDirectory: true,
-        },
-        {
-          title: 'node_modules',
-          isDirectory: true,
-        },
+        }
       ],
     }
 
@@ -118,7 +103,7 @@ class App extends Component {
         style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}
       >
         <div style={{ flex: '0 0 auto', padding: '0 15px' }}>
-          <h3>File Explorer Theme</h3>
+          <h3>BMS Theme</h3>
           <button onClick={this.expandAll}>Expand All</button>
           <button onClick={this.collapseAll}>Collapse All</button>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -182,36 +167,6 @@ class App extends Component {
             canDrag={({ node }) => !node.dragDisabled}
             canDrop={({ nextParent }) => !nextParent || nextParent.isDirectory}
             generateNodeProps={rowInfo => ({
-              icons: rowInfo.node.isDirectory
-                ? [
-                    <div
-                      style={{
-                        borderLeft: 'solid 8px gray',
-                        borderBottom: 'solid 10px gray',
-                        marginRight: 10,
-                        width: 16,
-                        height: 12,
-                        filter: rowInfo.node.expanded
-                          ? 'drop-shadow(1px 0 0 gray) drop-shadow(0 1px 0 gray) drop-shadow(0 -1px 0 gray) drop-shadow(-1px 0 0 gray)'
-                          : 'none',
-                        borderColor: rowInfo.node.expanded ? 'white' : 'gray',
-                      }}
-                    />,
-                  ]
-                : [
-                    <div
-                      style={{
-                        border: 'solid 1px black',
-                        fontSize: 8,
-                        textAlign: 'center',
-                        marginRight: 10,
-                        width: 12,
-                        height: 16,
-                      }}
-                    >
-                      F
-                    </div>,
-                  ],
               buttons: [
                 <button
                   style={{
