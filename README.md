@@ -1,5 +1,7 @@
 # React Sortable Tree BMS Theme
 
+[![github: last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat-square)](https://github.com/Billes/react-sortable-tree-theme-bms) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier) 
+
 ## Features
 * You can click anywhere on a node to drag it.
 * More compact design, with indentation alone used to represent tree depth.
