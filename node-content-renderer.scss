@@ -1,7 +1,7 @@
 .rowWrapper {
   height: 100%;
   box-sizing: border-box;
-  cursor: pointer;
+  cursor: move;
   font-family: Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 13px;
 
@@ -119,8 +119,8 @@
   z-index: 2;
   position: absolute;
   top: 45%;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   transform: translate3d(-50%, -50%, 0);
   cursor: pointer;
 
@@ -141,11 +141,6 @@
 
   &:focus {
     outline: none;
-
-    &::after {
-      filter: drop-shadow(0 0 1px #83bef9) drop-shadow(0 0 1px #83bef9)
-        drop-shadow(0 0 1px #83bef9);
-    }
   }
 }
 
