@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './node-content-renderer.scss'
+import NavigateCollapse from './icons/navigateNext'
+import NavigateExpand from './icons/navigateDown'
 
 function isDescendant(older, younger) {
   return (
@@ -111,7 +113,25 @@ class FileThemeNodeContentRenderer extends Component {
                   treeIndex,
                 })
               }
-            />
+            >
+            {node.expanded ? (
+              <NavigateExpand
+                viewBox="3 2 18 18"
+                style={{
+                  width: '12px',
+                  height: '12px'
+                }}
+              />
+            ) : (
+              <NavigateCollapse
+                viewBox="3 2 18 18"
+                style={{
+                  width: '12px',
+                  height: '12px'
+                }}
+              />
+            )}
+            </button>
           )}
 
         <div

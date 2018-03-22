@@ -115,7 +115,6 @@
 .expandButton {
   border: none;
   background: transparent;
-  padding: 0;
   z-index: 2;
   position: absolute;
   top: 45%;
@@ -123,29 +122,7 @@
   height: 20px;
   transform: translate3d(-50%, -50%, 0);
   cursor: pointer;
-
-  &::after {
-    content: '';
-    position: absolute;
-    transform-origin: 7px 4px;
-    transform: translate3d(-50%, -20%, 0);
-    border: solid transparent 10px;
-    border-left-width: 7px;
-    border-right-width: 7px;
-    border-top-color: gray;
-  }
-
-  &:hover::after {
-    border-top-color: black;
-  }
-
-  &:focus {
-    outline: none;
-  }
-}
-
-.expandButton::after {
-  transform: translate3d(-50%, -20%, 0) rotateZ(-90deg);
+  outline: none
 }
 
 /**
