@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SortableTree, { toggleExpandedForAll } from 'react-sortable-tree'
-import FileExplorerTheme from '../index'
+import BMSTheme from '../index'
 import './app.css'
 
 class App extends Component {
@@ -140,11 +140,12 @@ class App extends Component {
           </form>
         </div>
 
-        <div style={{ flex: '1 0 50%', padding: '15px 0 0 15px' }}>
+        <div style={{ flex: '1 0 50%', padding: '5px 0 0 5px', width: 250 }}>
           <SortableTree
-            theme={FileExplorerTheme}
+            theme={BMSTheme}
             treeData={treeData}
             onChange={this.updateTreeData}
+            innerStyle={{outline:0}}
             searchQuery={searchString}
             searchFocusOffset={searchFocusIndex}
             searchFinishCallback={matches =>
