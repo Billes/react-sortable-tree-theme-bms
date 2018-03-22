@@ -100,11 +100,9 @@ class FileThemeNodeContentRenderer extends Component {
             <button
               type="button"
               aria-label={node.expanded ? 'Collapse' : 'Expand'}
-              className={
-                node.expanded ? styles.collapseButton : styles.expandButton
-              }
+              className={styles.button}
               style={{
-                left: (lowerSiblingCounts.length - 0.7) * scaffoldBlockPxWidth,
+                left: (lowerSiblingCounts.length - 0.9) * scaffoldBlockPxWidth,
               }}
               onClick={() =>
                 toggleChildrenVisibility({
