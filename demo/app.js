@@ -156,7 +156,6 @@ class App extends Component {
               })
             }
             canDrag={({ node }) => !node.dragDisabled}
-            canDrop={({ nextParent }) => !nextParent || nextParent.isDirectory}
           />
         </div>
       </div>
