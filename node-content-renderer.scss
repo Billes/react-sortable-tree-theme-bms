@@ -10,8 +10,7 @@
   }
 
   &:active {
-    color: #009ee3;
-    opacity: 0.7;
+    color: #5acdff;
   }
 }
 
@@ -44,7 +43,7 @@
 
   &::before {
     background-color: lightblue;
-    border: 2px dotted black;
+    border: 1px dotted black;
     content: '';
     position: absolute;
     top: 0;
@@ -152,7 +151,7 @@
 /* Highlight line for pointing to dragged row destination
      ========================================================================== */
 $highlight-color: #36c2f6;
-$highlight-line-size: 6px; // Make it an even number for clean rendering
+$highlight-line-size: 4px; // Make it an even number for clean rendering
 
 /**
    * +--+--+
@@ -173,39 +172,6 @@ $highlight-line-size: 6px; // Make it an even number for clean rendering
     left: 50%;
     top: 0;
     height: 100%;
-  }
-
-  @keyframes arrow-pulse {
-    $base-multiplier: 10;
-    0% {
-      transform: translate(0, 0);
-      opacity: 0;
-    }
-    30% {
-      transform: translate(0, 30% * $base-multiplier);
-      opacity: 1;
-    }
-    70% {
-      transform: translate(0, 70% * $base-multiplier);
-      opacity: 1;
-    }
-    100% {
-      transform: translate(0, 100% * $base-multiplier);
-      opacity: 0;
-    }
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    height: 0;
-    margin-left: -1 * $highlight-line-size / 2;
-    left: 50%;
-    top: 0;
-    border-left: $highlight-line-size / 2 solid transparent;
-    border-right: $highlight-line-size / 2 solid transparent;
-    border-top: $highlight-line-size / 2 solid white;
-    animation: arrow-pulse 1s infinite linear both;
   }
 }
 
