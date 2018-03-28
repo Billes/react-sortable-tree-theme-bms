@@ -25,7 +25,29 @@ export default class Tree extends Component {
     super(props);
 
     this.state = {
-      treeData: [{ title: 'src/', children: [ { title: 'index.js' } ] }],
+      treeData: [
+        { title: 'Incoming Files' },
+        {
+          title: 'Encyclopedia',
+          children: [
+            {
+              title: 'Culture',
+              children: [{ title: 'Art' }, { title: 'Craft' }],
+            },
+            { title: 'Science' },
+          ]
+        },
+        {
+          title: 'Retail',
+          children: [
+            { title: 'Node 01' },
+            { title: 'Node 02' },
+            { title: 'Node 03', children: [{ title: 'Subnode 01' }] },
+            { title: 'Node 04' },
+            { title: 'Node 05' },
+          ],
+        },
+      ],
     };
   }
 
@@ -36,7 +58,7 @@ export default class Tree extends Component {
           treeData={this.state.treeData}
           onChange={treeData => this.setState({ treeData })}
           theme={BMSTheme}
-          scaffoldBlockPxWidth={17}
+          scaffoldBlockPxWidth={16}
         />
       </div>
     );
