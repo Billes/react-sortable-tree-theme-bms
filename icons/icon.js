@@ -25,9 +25,9 @@ const Icon = ({
     style: {}
   }
   Icon.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.arrayOf(PropTypes.node),
     viewBox: PropTypes.string,
-    style: PropTypes.string
+    style: PropTypes.shape({})
   }
 
 export default Icon
