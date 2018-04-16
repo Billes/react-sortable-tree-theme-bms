@@ -15,7 +15,7 @@ style: {}
 }
 NavigateDown.propTypes = {
 viewBox: PropTypes.string,
-style: PropTypes.string
+style: PropTypes.shape({})
 }
 
 export default NavigateDown

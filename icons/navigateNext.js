@@ -15,7 +15,7 @@ NavigateNext.defaultProps = {
 }
 NavigateNext.propTypes = {
   viewBox: PropTypes.string,
-  style: PropTypes.string
+  style: PropTypes.shape({})
 }
 
 export default NavigateNext
