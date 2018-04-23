@@ -102,7 +102,7 @@ class FileThemeNodeContentRenderer extends Component {
               aria-label={node.expanded ? 'Collapse' : 'Expand'}
               className={styles.button}
               style={{
-                left: (lowerSiblingCounts.length - 0.9) * scaffoldBlockPxWidth,
+                left: (lowerSiblingCounts.length - 0.8) * scaffoldBlockPxWidth,
               }}
               onClick={() =>
                 toggleChildrenVisibility({
@@ -117,7 +117,10 @@ class FileThemeNodeContentRenderer extends Component {
                 viewBox="3 2 18 18"
                 style={{
                   width: '12px',
-                  height: '12px'
+                  height: '12px',
+                  position: 'absolute',
+                  top: '2px',
+                  left: '2px'
                 }}
               />
             ) : (
@@ -125,7 +128,10 @@ class FileThemeNodeContentRenderer extends Component {
                 viewBox="3 2 18 18"
                 style={{
                   width: '12px',
-                  height: '12px'
+                  height: '12px',
+                  position: 'absolute',
+                  top: '2px',
+                  left: '2px'
                 }}
               />
             )}
