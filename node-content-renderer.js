@@ -103,6 +103,8 @@ class FileThemeNodeContentRenderer extends Component {
               className={styles.button}
               style={{
                 left: (lowerSiblingCounts.length - 0.8) * scaffoldBlockPxWidth,
+                top: 'unset',
+                bottom: -4
               }}
               onClick={() =>
                 toggleChildrenVisibility({

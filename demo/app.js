@@ -17,6 +17,7 @@ class App extends Component {
         },
         {
           title: 'Encyclopedia',
+          isRoot: true,
           children: [
             {
               title: 'Culture',
@@ -27,6 +28,7 @@ class App extends Component {
         },
         {
           title: 'Retail',
+          isRoot: true,
           children: [
             { title: 'Node 01' },
             { title: 'Node 02' },
@@ -148,6 +150,7 @@ class App extends Component {
             innerStyle={{outline:0}}
             searchQuery={searchString}
             searchFocusOffset={searchFocusIndex}
+            rowHeight={({node }) => 20 + (node.isRoot ? 10 : 0)}
             searchFinishCallback={matches =>
               this.setState({
                 searchFoundCount: matches.length,
@@ -156,6 +159,14 @@ class App extends Component {
               })
             }
             canDrag={({ node }) => !node.dragDisabled}
+            generateNodeProps={({ node }) => ({
+                style: {
+                  fontSize: 13,
+                  color: node.selected ? '#0069b4' : '',
+                  alignSelf: 'flex-end',
+                  height: 20
+                }
+              })}
           />
         </div>
       </div>
